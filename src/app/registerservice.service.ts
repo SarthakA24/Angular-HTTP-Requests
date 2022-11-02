@@ -8,8 +8,7 @@ import { Employee } from './model/employee';
 })
 export class RegisterserviceService {
 
-  URL: string = "http://localhost:3000/employee";
-  deleteEmpURL?: string;
+  URL: string = "http://localhost:3000/employee/";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -22,7 +21,6 @@ export class RegisterserviceService {
   }
 
   deleteData(empId: number) {
-    this.deleteEmpURL = "http://localhost:3000/employee/" + empId;
-    return this.httpClient.delete(this.deleteEmpURL);
+    return this.httpClient.delete(this.URL + empId);
   }
 }
