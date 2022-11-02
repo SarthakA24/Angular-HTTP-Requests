@@ -13,13 +13,14 @@ export class RegisterComponent implements OnInit {
 
   employeeDetail: Employee = {};
   employeeData: Employee[] = [];
+  empId: number = 0;
 
   register() {
     this.registerService.saveData(this.employeeDetail).subscribe({
       next(x) {
-        alert("Data Added")
+        alert("Data Added");
       }, error(x) {
-        alert("Error")
+        alert("Error");
       }
     });
   }
@@ -27,6 +28,16 @@ export class RegisterComponent implements OnInit {
   fetch() {
     this.registerService.fetchData().subscribe(empData => {
       this.employeeData = empData;
+    });
+  }
+
+  deleteData() {
+    this.registerService.deleteData(this.empId).subscribe({
+      next(x) {
+        alert("Data Deleted!");
+      }, error(x) {
+        alert("Error!");
+      }
     });
   }
 
