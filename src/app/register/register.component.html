@@ -28,3 +28,14 @@
 <p>Enter Employee Id - </p>
 <input type="number" [(ngModel)]="empId">
 <button (click)="deleteData(); fetch()">Delete Data</button>
+<hr>
+<h3>Update Employee Data</h3>
+<p>Enter the Employee Id to Update - </p>
+<input type="number" placeholder="Employee Id" [(ngModel)]="empIdToUpdate" />
+<button (click)="fetchEmpData()">Get Employee Detail</button>
+<div>
+    <p>Employee Name - <input type="text" [(ngModel)]="employeeToUpdate.fullName" /></p>
+    Employee Contact Number - <input type="number" [(ngModel)]="employeeToUpdate.contactNo" />
+    <br><br>
+    <button (click)="updateData(); fetch()">Save Changes</button>
+</div>
