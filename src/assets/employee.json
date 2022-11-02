@@ -1,14 +1,3 @@
 {
-  "employee": [
-    {
-      "fullName": "Sarthak",
-      "id": "11",
-      "contactNo": 9999999999
-    },
-    {
-      "fullName": "Aditya",
-      "id": "12",
-      "contactNo": 9999887766
-    }
-  ]
+  "employee": []
 }
