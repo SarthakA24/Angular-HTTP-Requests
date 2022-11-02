@@ -14,12 +14,12 @@ export class RegisterComponent implements OnInit {
   employeeDetail: Employee = {};
 
   register() {
-    this.registerService.saveData(this.employeeDetail).subscribe({ 
-      next(x) { 
-        alert("Data Added") 
-      }, error(x) { 
-        alert("Error") 
-      } 
+    this.registerService.saveData(this.employeeDetail).subscribe({
+      next(x) {
+        alert("Data Added")
+      }, error(x) {
+        alert("Error")
+      }
     });
   }
 
