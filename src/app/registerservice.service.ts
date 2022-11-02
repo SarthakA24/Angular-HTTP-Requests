@@ -12,6 +12,6 @@ export class RegisterserviceService {
   constructor(private httpClient: HttpClient) { }
 
   saveData(employeeData: Employee) {
-    this.httpClient.post(this.URL,employeeData);
+    return this.httpClient.post(this.URL,employeeData);
   }
 }
