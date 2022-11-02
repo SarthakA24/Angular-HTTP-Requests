@@ -25,6 +25,6 @@ export class RegisterserviceService {
   }
 
   updateData(employeeData: Employee) {
-    return this.httpClient.put(this.URL,employeeData);
+    return this.httpClient.put(this.URL + employeeData.id,employeeData);
   }
 }
