@@ -4,7 +4,7 @@
 <input type="text" placeholder="Alpha Numeric Value" [(ngModel)]="employeeDetail.id" />
 <p>Contact Number - </p>
 <input type="number" placeholder="9999999999" [(ngModel)]="employeeDetail.contactNo" />
-<button (click)="register()">Submit Details</button>
+<button (click)="register(); fetch()">Submit Details</button>
 <hr>
 <h3>Data Fetched From JSON</h3>
 <div>
