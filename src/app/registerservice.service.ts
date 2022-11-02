@@ -8,14 +8,21 @@ import { Employee } from './model/employee';
 })
 export class RegisterserviceService {
 
-  private URL: string = "http://localhost:3000/employee";
+  URL: string = "http://localhost:3000/employee";
+  deleteEmpURL?: string;
 
   constructor(private httpClient: HttpClient) { }
 
   saveData(employeeData: Employee) {
     return this.httpClient.post(this.URL, employeeData);
   }
+
   fetchData(): Observable<Array<Employee>> {
     return this.httpClient.get<Array<Employee>>(this.URL);
+  }
+
+  deleteData(empId: number) {
+    this.deleteEmpURL = "http://localhost:3000/employee/" + empId;
+    return this.httpClient.delete(this.deleteEmpURL);
   }
 }
