@@ -23,6 +23,10 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  fetch() {
+    this.registerService.fetchData();
+  }
+
   ngOnInit(): void {
   }
 
