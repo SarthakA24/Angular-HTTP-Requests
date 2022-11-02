@@ -23,4 +23,8 @@ export class RegisterserviceService {
   deleteData(empId: number) {
     return this.httpClient.delete(this.URL + empId);
   }
+
+  updateData(employeeData: Employee) {
+    return this.httpClient.put(this.URL,employeeData);
+  }
 }
