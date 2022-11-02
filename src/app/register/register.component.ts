@@ -14,6 +14,8 @@ export class RegisterComponent implements OnInit {
   employeeDetail: Employee = {};
   employeeData: Employee[] = [];
   empId: number = 0;
+  empIdToUpdate: number = 0;
+  employeeToUpdate: Employee = {};
 
   register() {
     this.registerService.saveData(this.employeeDetail).subscribe({
@@ -35,6 +37,20 @@ export class RegisterComponent implements OnInit {
     this.registerService.deleteData(this.empId).subscribe({
       next(x) {
         alert("Data Deleted!");
+      }, error(x) {
+        alert("Error!");
+      }
+    });
+  }
+
+  fetchEmpData(){
+    this.employeeToUpdate = this.employeeData.filter(employee => employee.id == this.empIdToUpdate)[0];
+  }
+
+  updateData() {
+    this.registerService.updateData(this.employeeToUpdate).subscribe({
+      next(x) {
+        alert("Data Updated!");
       }, error(x) {
         alert("Error!");
       }
