@@ -12,10 +12,14 @@
         <thead>
             <th>Employee Name</th>
             <th>Employee Id</th>
-            <th>Employee Contact Number/th>
+            <th>Employee Contact Number</th>
         </thead>
         <tbody>
-            
+            <tr *ngFor="let data of employeeData">
+                <td>{{data.fullName}}</td>
+                <td>{{data.id}}</td>
+                <td>{{data.contactNo}}</td>
+            </tr>
         </tbody>
     </table>
 </div>
