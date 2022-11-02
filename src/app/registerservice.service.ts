@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Employee } from './model/employee';
 
 @Injectable({
@@ -13,5 +14,8 @@ export class RegisterserviceService {
 
   saveData(employeeData: Employee) {
     return this.httpClient.post(this.URL, employeeData);
+  }
+  fetchData(): Observable<Array<Employee>> {
+    return this.httpClient.get<Array<Employee>>(this.URL);
   }
 }
