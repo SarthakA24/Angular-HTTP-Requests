@@ -9,12 +9,19 @@ import { RegisterserviceService } from '../registerservice.service';
 })
 export class RegisterComponent implements OnInit {
 
+  constructor(private registerService: RegisterserviceService) { }
+
   employeeDetail: Employee = {};
 
   register() {
-    this.registerService.saveData(this.employeeDetail);
+    this.registerService.saveData(this.employeeDetail).subscribe({ 
+      next(x) { 
+        alert("Data Added") 
+      }, error(x) { 
+        alert("Error") 
+      } 
+    });
   }
-  constructor(private registerService: RegisterserviceService) { }
 
   ngOnInit(): void {
   }
