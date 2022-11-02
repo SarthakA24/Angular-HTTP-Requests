@@ -12,6 +12,7 @@ export class RegisterComponent implements OnInit {
   constructor(private registerService: RegisterserviceService) { }
 
   employeeDetail: Employee = {};
+  employeeData: Employee[] = [];
 
   register() {
     this.registerService.saveData(this.employeeDetail).subscribe({
@@ -24,10 +25,13 @@ export class RegisterComponent implements OnInit {
   }
 
   fetch() {
-    this.registerService.fetchData();
+    this.registerService.fetchData().subscribe(empData => {
+      this.employeeData = empData;
+    });
   }
 
   ngOnInit(): void {
+    this.fetch();
   }
 
 }
